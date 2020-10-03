@@ -1,0 +1,50 @@
+1. map
+    my_list = map(lambda n: n*n, nums)
+    # for in nums, locate all the n and return n * n.
+
+2. filter
+    my_list= filter(lambda n: n%2==0, nums)
+    # collect all the n which n%2 == 0 in nums.
+
+3. comprehensions
+    my_list = [(letter,num) for letter in 'abcd' for num in range(4)]
+    # lettet and num must match letter and num.
+
+4. zip
+    names = ['Bruce', 'Clark', 'Peter', 'Logan', "Wade"]
+    heros = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
+    zip(names, heros)
+    # output [('Bruce', 'Batman'), ('Clark', 'Superman'), ('Peter', 'Spiderman'), ('Logan', 'Wolverine'), ('Wade', 'Deadpool')]
+    # zip ganna match two lists by index into tuples in a list.
+
+5. yield
+
+6. .sort() and sorted()
+    # .sort() return nothing, it just change the original list.
+    # sorted() return a new variable.
+    list = [3,78,89,6,5,3,2,5,7,9,9]
+    sorted_list = sorted(list)
+    list.sort()
+    print (list == sorted_list)
+    # output True
+
+    6.0.1 .sort() and sorted() for tuple
+        # tuple only can be sorted by sorted() function, and return a list.
+        tup = (3,78,89,6,5,3,2,5,7,9,9)
+        sorted_tup = sorted(tup)
+        print sorted_tup
+        # output [2, 3, 3, 5, 5, 6, 7, 9, 9, 78, 89]
+
+    6.0.2 .sort() and sorted() for dictionary
+        # dictionary only can be sorted by sorted() function, and and can only sort the keys.
+        dict = {'name':'Jun', 'job':'Sushi Chef', 'age': '30', 'os':'Mac'}
+        sorted_dict = sorted(dict)
+        print sorted_dict
+        # output ['age', 'job', 'name', 'os']
+
+    6.1 .sort() and sorted() with key parameter
+        # with any negetive number, can be sort by abuslote value.
+        list = [-6, -5, -4,1,2,3]
+        sorted_list = sorted(list, key=abs)
+        print(sorted_list)
+        # output [1, 2, 3, -4, -5, -6]
