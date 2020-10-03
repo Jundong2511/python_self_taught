@@ -7,11 +7,13 @@ list.sort() # nothing return
 print(list == sorted_list)
 # this return True
 
-tup = (3,78,89,6,5,3,2,5,7,9,9)
-### tup.sort() # this is not working, tuple dosen't have .sort() function
+## tup.sort() ## this is not working, tuple dosen't have .sort() function
 # tuple only can user sorted(), but it return a list.
+tup = (3,78,89,6,5,3,2,5,7,9,9)
 sorted_tup = sorted(tup)
 print sorted_tup
+
+
 
 # dictionary only can be sort keys, this return a list of keys, not include values.
 dict = {'name':'Jun', 'job':'Sushi Chef', 'age': '30', 'os':'Mac'}
@@ -28,6 +30,8 @@ print(sorted_list)
 # output [1, 2, 3, -4, -5, -6]
 
 
+
+# sort object
 class Employee():
     def __init__(self, name, age, salary):
         self.name = name
@@ -42,3 +46,22 @@ e2 = Employee('July', 32, 40000)
 e3 = Employee('Tim', 55, 90000)
 
 employees = [e1,e2,e3]
+# i = sorted(employees)
+# can not sort employees directly, need work with a key.
+
+# way 1.
+# def e_sort(emp):
+#   return emp.name
+#
+# sort_employees = sorted(employees, key=e_sort) # reverse=True
+
+# way 2.
+# with lambda, we dont need the e_sort functin anymore.
+# sort_employees = sorted(employees, key= lambda e: e.name)
+
+# way 3.
+# from operator import attrgetter
+# sort_employees = sorted(employees, key=attrgetter('age'))
+
+print(sort_employees)
+# ouput [(Carl,28,$80000), (July,32,$40000), (Tim,55,$90000)]
